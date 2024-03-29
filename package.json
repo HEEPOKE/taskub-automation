@@ -1,0 +1,13 @@
+{
+  "name": "taskub-automation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/HEEPOKE/taskub-automation.git",
+  "author": "HEEPOKE <77528292+HEEPOKE@users.noreply.github.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.42.1",
+    "@types/node": "^20.11.30"
+  },
+  "scripts": {}
+}
