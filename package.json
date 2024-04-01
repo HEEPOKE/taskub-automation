@@ -14,7 +14,10 @@
   "scripts": {
     "test": "npx bddgen && npx playwright test",
     "test:ui": "npx bddgen && npx playwright test --ui",
-    "code-gen": "npx playwright codegen"
+    "code-gen": "npx playwright codegen",
+    "watch:bdd": "nodemon -w ./src/e2e/features -w ./src/e2e/steps -e feature,js,ts --exec 'npx bddgen'",
+    "watch:pw": "playwright test --ui",
+    "watch": "run-p watch:*"
   },
   "dependencies": {
     "dotenv": "^16.4.5"

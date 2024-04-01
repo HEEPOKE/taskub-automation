@@ -6,3 +6,4 @@ node_modules/
 /results
 yarn.lock
 .env
+.features-gen/

@@ -1,11 +1,13 @@
-import * as dotenv from 'dotenv'
+import * as dotenv from "dotenv";
 
-dotenv.config()
+dotenv.config();
 
-const { BASE_URL } = process.env
+const { BASE_URL, USERNAME, PASSWORD } = process.env;
 
 const configs = {
   BASE_URL,
-}
+  USERNAME,
+  PASSWORD,
+};
 
-export default configs
+export default configs;
