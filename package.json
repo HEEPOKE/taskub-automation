@@ -15,5 +15,8 @@
     "test": "npx bddgen && npx playwright test",
     "test:ui": "npx bddgen && npx playwright test --ui",
     "code-gen": "npx playwright codegen"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
   }
 }

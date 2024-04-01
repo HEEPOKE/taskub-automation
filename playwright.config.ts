@@ -1,5 +1,6 @@
 import { defineConfig, devices } from '@playwright/test'
 import { cucumberReporter, defineBddConfig } from 'playwright-bdd'
+import configs from './src/configs/configs'
 
 const testDir = defineBddConfig({
   paths: ['./src/e2e/features/*.feature'],
@@ -15,7 +16,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: [
     cucumberReporter('html', {
-      outputFile: 'results/report.html',
+      outputFile: 'results/report-cucumber.html',
     }),
   ],
   use: {
@@ -24,6 +25,7 @@ export default defineConfig({
     video: 'on-first-retry',
     headless: false,
     locale: 'th-TH',
+    baseURL: `${configs.BASE_URL}`
   },
   projects: [
     {
