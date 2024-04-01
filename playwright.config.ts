@@ -4,6 +4,7 @@ import { cucumberReporter, defineBddConfig } from 'playwright-bdd'
 const testDir = defineBddConfig({
   paths: ['./src/e2e/features/*.feature'],
   require: ['./src/e2e/steps/*.spec.ts'],
+  importTestFrom: './src/fixtures/e2e.ts',
 })
 
 export default defineConfig({
@@ -24,7 +25,6 @@ export default defineConfig({
     headless: false,
     locale: 'th-TH',
   },
-
   projects: [
     {
       name: 'chromium',
