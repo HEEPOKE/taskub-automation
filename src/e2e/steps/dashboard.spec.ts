@@ -1,7 +1,7 @@
 import { expect } from "@playwright/test";
 import { createBdd } from "playwright-bdd";
 import configs from "../../configs/configs";
-import { test } from "../../fixtures/e2e";
+import { test } from "../../fixtures/e2e/auth";
 
 const { Given, When, Then } = createBdd(test);
 

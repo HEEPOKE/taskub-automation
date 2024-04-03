@@ -5,7 +5,7 @@ import configs from "./src/configs/configs";
 const testDir = defineBddConfig({
   paths: ["./src/e2e/features/*.feature"],
   require: ["./src/e2e/steps/*.spec.ts"],
-  importTestFrom: "./src/fixtures/e2e.ts",
+  importTestFrom: "./src/fixtures/e2e/auth.ts",
 });
 
 export default defineConfig({

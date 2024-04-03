@@ -1,5 +1,6 @@
-import { Page } from "@playwright/test";
+import { expect, Page } from "@playwright/test";
 import { test as base } from "playwright-bdd";
+import configs from "../../configs/configs";
 
 class MyPage {
   constructor(public page: Page) {}
@@ -18,8 +19,10 @@ class MyPage {
   }
 
   async chooseProject() {
-    await this.page.getByText('เลือกโครงการ').click();
-    await this.page.getByRole('button', { name: 'default EXP : 22 ธันวาคม 2567' }).click();
+    await this.page.getByText("เลือกโครงการ").click();
+    await this.page
+      .getByRole("button", { name: "default EXP : 22 ธันวาคม 2567" })
+      .click();
   }
 
   async logout() {
@@ -31,4 +34,23 @@ export const test = base.extend<{ myPage: MyPage }>({
   myPage: async ({ page }, use) => {
     await use(new MyPage(page));
   },
+});
+
+test.beforeEach(async ({ myPage }) => {
+  await myPage.page.goto(`${configs.BASE_URL}/login`);
+  await myPage.login(`${configs.USERNAME}`, `${configs.PASSWORD}`);
+  await myPage.page.waitForURL(`${configs.BASE_URL}/`);
+  await myPage.chooseProject();
+});
+
+test.afterAll(async ({ myPage }) => {
+  await myPage.logout();
+});
+
+test.describe("User Authentication Scenarios", () => {
+  test("Successful login and project selection", async ({ myPage, page }) => {
+    await expect(
+      page.getByRole("heading", { name: "จัดการระบบ" })
+    ).toBeVisible();
+  });
 });
