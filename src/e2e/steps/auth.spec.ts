@@ -1,7 +1,7 @@
 import { expect } from "@playwright/test";
 import { createBdd } from "playwright-bdd";
 import configs from "../../configs/configs";
-import { test } from "../../fixtures/e2e/auth";
+import { test } from "../fixtures/fixture";
 
 const { Given, When, Then } = createBdd(test);
 
@@ -25,7 +25,7 @@ Then("choose project", async ({ myPage }) => {
 });
 
 Then("the user sees the management dashboard", async ({ page }) => {
-  await expect(page.getByRole("heading", { name: "จัดการระบบ" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "สรุปข้อมูล" })).toBeVisible();
 });
 
 Given(

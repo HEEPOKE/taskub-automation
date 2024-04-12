@@ -3,17 +3,10 @@ import { cucumberReporter, defineBddConfig } from 'playwright-bdd'
 import configs from './src/configs/configs'
 
 const testDir = defineBddConfig({
-<<<<<<< HEAD
   paths: ["./src/e2e/features/*.feature"],
   require: ["./src/e2e/steps/*.spec.ts"],
-  importTestFrom: "./src/fixtures/e2e/auth.ts",
+  importTestFrom: "./src/e2e/fixtures/fixture.ts",
 });
-=======
-  paths: ['./src/e2e/features/*.feature'],
-  require: ['./src/e2e/steps/*.spec.ts'],
-  importTestFrom: './src/fixtures/e2e.ts',
-})
->>>>>>> parent of 5556859 (feat: update test && setup :money_with_wings:)
 
 export default defineConfig({
   testDir: testDir,

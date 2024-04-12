@@ -1,7 +1,5 @@
-<<<<<<< HEAD:src/fixtures/e2e/auth.ts
-import { expect, Page } from "@playwright/test";
+import { Page } from "@playwright/test";
 import { test as base } from "playwright-bdd";
-import configs from "../../configs/configs";
 
 class MyPage {
   constructor(public page: Page) {}
@@ -36,24 +34,3 @@ export const test = base.extend<{ myPage: MyPage }>({
     await use(new MyPage(page));
   },
 });
-
-test.beforeEach(async ({ myPage }) => {
-  await myPage.page.goto(`${configs.BASE_URL}/login`);
-  await myPage.login(`${configs.USERNAME}`, `${configs.PASSWORD}`);
-  await myPage.page.waitForURL(`${configs.BASE_URL}/`);
-  await myPage.chooseProject();
-});
-
-test.afterAll(async ({ myPage }) => {
-  await myPage.logout();
-});
-
-test.describe("User Authentication Scenarios", () => {
-  test("Successful login and project selection", async ({ myPage, page }) => {
-    await expect(
-      page.getByRole("heading", { name: "จัดการระบบ" })
-    ).toBeVisible();
-  });
-});
-=======
->>>>>>> parent of 5556859 (feat: update test && setup :money_with_wings:):src/fixtures/e2e.ts
