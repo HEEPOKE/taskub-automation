@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "cSpell.words": [
     "เข้าสู่ระบบ",
     "เข้าสู่ระบบสำเร็จ",
@@ -11,4 +12,7 @@
     "HEEPOKE",
     "taskub"
   ]
+=======
+  "cSpell.words": ["bddgen", "codegen"]
+>>>>>>> parent of 5556859 (feat: update test && setup :money_with_wings:)
 }

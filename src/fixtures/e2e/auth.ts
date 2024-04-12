@@ -1,3 +1,4 @@
+<<<<<<< HEAD:src/fixtures/e2e/auth.ts
 import { expect, Page } from "@playwright/test";
 import { test as base } from "playwright-bdd";
 import configs from "../../configs/configs";
@@ -54,3 +55,5 @@ test.describe("User Authentication Scenarios", () => {
     ).toBeVisible();
   });
 });
+=======
+>>>>>>> parent of 5556859 (feat: update test && setup :money_with_wings:):src/fixtures/e2e.ts
